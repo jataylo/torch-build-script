@@ -45,7 +45,7 @@ MAX_JOBS=$MAX_JOBS .jenkins/pytorch/build.sh 2>&1 &> $TORCH_BUILD_LOG
 cd ../
 program_output=$(python -c 'import torch; torch.cuda.is_available()' 2>&1 >/dev/null | grep -Eo "ImportError")
 if [[ -z "$program_output" ]] ; then
-    echo "$BUILD_SUCCESS"
+    echo "BUILD_SUCCESS"
 else
-    echo "$BUILD_FAILED"
+    echo "BUILD_FAILED"
 fi
