@@ -37,7 +37,7 @@ git submodule update --init --recursive 2>&1 &> $TORCH_BUILD_LOG
 # -------------------------------------------------------------------------
 MAX_JOBS=`nproc`
 printf "\nBulding pytorch...\n"
-printf "MAX_JOBS:  %s\nPYTORCH_ROCM_ARCH:  %s\nBuild log:  %s\n\n" "$MAX_JOBS" "$TORCH_BUILD_LOG"
+printf "MAX_JOBS:  %s\nBuild log:  %s\n\n" "$MAX_JOBS" "$TORCH_BUILD_LOG"
 MAX_JOBS=$MAX_JOBS .jenkins/pytorch/build.sh 2>&1 &> $TORCH_BUILD_LOG
 
 # Run a simple torch example
